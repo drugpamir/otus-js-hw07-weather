@@ -45,9 +45,7 @@ jobs:
           git config --local user.email "test@test.com"
           git config --local user.name "Test"
           git commit -a -m "Add changes"
-          git push origin $TARGET_BRANCH --force
-        env:
-          TARGET_BRANCH: ${{ github.ref_name }}
+          git push origin $GITHUB_REF_NAME --force
 
       # - name: Push changes
       #   uses: ad-m/github-push-action@master
