@@ -42,11 +42,10 @@ jobs:
 
       - name: Commit files
         run: |
-          printenv
           git config --local user.email "test@test.com"
           git config --local user.name "Test"
           git commit -a -m "Add changes"
-          git push origin $GITHUB_REF_NAME --force
+          git push origin $GITHUB_HEAD_REF --force
 
       # - name: Push changes
       #   uses: ad-m/github-push-action@master
