@@ -2,7 +2,6 @@ name: PR Sanity Check
 
 on:
   - pull_request
-  - push
 
 jobs:
   lint:
@@ -12,8 +11,6 @@ jobs:
       statuses: write
       contents: write
       pull-requests: write # 'write' access to pull requests
-    env:
-      COVERALLS_REPO_TOKEN: zr2d2c9OVbmf5gIMogppFR0ytVWarIaZU
     steps:
       - name: Checkout
         uses: actions/checkout@v4
@@ -35,5 +32,3 @@ jobs:
 
       - name: Coveralls
         uses: coverallsapp/github-action@v2
-        with:
-          debug: true
