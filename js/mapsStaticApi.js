@@ -16,7 +16,7 @@ export function fetchMapImageByCoords(
   latitude,
   longitude,
   zoom = 12,
-  size = 400
+  size = 400,
 ) {
   if (longitude && latitude && apiKey) {
     src = `${baseUrl}?ll=${latitude},${longitude}&lang=ru_RU&size=${size},${size}&z=${zoom}&pt=${latitude},${longitude}&apikey=${apiKey}`;

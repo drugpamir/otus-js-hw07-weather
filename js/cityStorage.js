@@ -56,7 +56,7 @@ export default class CityStorage {
     }
     localStorage.setItem(
       HISTORY_STORAGE_KEY,
-      JSON.stringify(this.storageCityNames)
+      JSON.stringify(this.storageCityNames),
     );
   }
 }
