@@ -5,6 +5,9 @@ on: pull_request
 jobs:
   lint:
     runs-on: ubuntu-22.04
+    permissions:
+      checks: write
+      statuses: write
     steps:
       - name: Checkout
         uses: actions/checkout@v3
@@ -28,6 +31,7 @@ jobs:
         run: DEBUG=check-code-coverage npx update-badge
 
       - name: Set code coverage commit status
+
         run: |
           printenv
           DEBUG=check-code-coverage npx set-gh-status
