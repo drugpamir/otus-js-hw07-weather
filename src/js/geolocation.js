@@ -13,7 +13,7 @@ const options = {
 export async function fetchCoords() {
   if (navigator.geolocation) {
     const promise = new Promise((resolve, reject) =>
-      navigator.geolocation.getCurrentPosition(resolve, reject, options)
+      navigator.geolocation.getCurrentPosition(resolve, reject, options),
     );
 
     const nav = await promise;

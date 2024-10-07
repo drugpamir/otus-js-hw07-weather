@@ -8,7 +8,7 @@ const defaultOptions = {};
 export async function fetchJson(
   url,
   options = defaultOptions,
-  timeoutMsecs = 5000
+  timeoutMsecs = 5000,
 ) {
   try {
     if (isAbsoluteURL(url)) options.signal = AbortSignal.timeout(timeoutMsecs);
