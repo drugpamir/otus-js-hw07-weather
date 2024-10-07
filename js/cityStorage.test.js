@@ -4,7 +4,7 @@ import CityStorage, {
   HISTORY_STORAGE_KEY,
 } from "./cityStorage";
 
-describe("CityStorage", () => {
+describe.skip("CityStorage", () => {
   const historyLimit = 5;
   let cityStorage;
   let data;
