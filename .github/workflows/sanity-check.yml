@@ -42,6 +42,7 @@ jobs:
 
       - name: Commit files
         run: |
+          printenv
           git config --local user.email "test@test.com"
           git config --local user.name "Test"
           git commit -a -m "Add changes"
