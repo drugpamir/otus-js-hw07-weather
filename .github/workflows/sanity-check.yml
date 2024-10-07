@@ -33,7 +33,7 @@ jobs:
       - name: Set code coverage commit status
 
         run: |
-          printenv
           DEBUG=check-code-coverage npx set-gh-status
+          cat README.md
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
