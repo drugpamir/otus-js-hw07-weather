@@ -8,6 +8,7 @@ jobs:
     permissions:
       checks: write
       statuses: write
+      contents: write
     steps:
       - name: Checkout
         uses: actions/checkout@v3
@@ -28,12 +29,17 @@ jobs:
         run: npx check-total --min 60
 
       - name: Update code coverage badge
-        run: DEBUG=check-code-coverage npx update-badge
-
-      - name: Set code coverage commit status
-
         run: |
-          DEBUG=check-code-coverage npx set-gh-status
-          cat README.md
-        env:
-          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          DEBUG=check-code-coverage npx update-badge
+
+      # - name: Set code coverage commit status
+      # run: |
+      #   DEBUG=check-code-coverage npx set-gh-status
+      # env:
+      #   GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+
+      - name: Push changes
+        uses: ad-m/github-push-action@master
+        with:
+          github_token: ${{ secrets.GITHUB_TOKEN }}]
+          force_with_lease: true
