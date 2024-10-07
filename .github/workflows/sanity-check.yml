@@ -47,7 +47,7 @@ jobs:
           git commit -a -m "Add changes"
           git push origin $TARGET_BRANCH --force
         env:
-          TARGET_BRANCH: ${{ github.ref }}
+          TARGET_BRANCH: ${{ github.ref_name }}
 
       # - name: Push changes
       #   uses: ad-m/github-push-action@master
