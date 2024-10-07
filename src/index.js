@@ -1,5 +1,4 @@
-document.querySelector(".app").innerHTML = `<h1>a + b = ${sum(1, 2)}</h1>`;
+import "./css/styles.css";
+import runApp from "./js/runApp";
 
-export function sum(a, b) {
-  return a + b;
-}
+runApp(document.querySelector(".app"));
