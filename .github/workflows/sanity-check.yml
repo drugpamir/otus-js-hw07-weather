@@ -13,6 +13,9 @@ jobs:
     steps:
       - name: Checkout
         uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+          ref: ${{ env.GITHUB_HEAD_REF }}
 
       - name: Install Packages
         run: |
@@ -45,7 +48,7 @@ jobs:
           git config --local user.email "test@test.com"
           git config --local user.name "Test"
           git commit -a -m "Add changes"
-          git push origin label --force
+          git push origin $GITHUB_HEAD_REF --force
 
       # - name: Push changes
       #   uses: ad-m/github-push-action@master
