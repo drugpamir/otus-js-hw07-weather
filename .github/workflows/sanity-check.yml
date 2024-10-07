@@ -40,8 +40,14 @@ jobs:
       # env:
       #   GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
 
+      - name: Commit files
+        run: |
+          git config --local user.email "test@test.com"
+          git config --local user.name "Test"
+          git commit -a -m "Add changes"
+
       - name: Push changes
         uses: ad-m/github-push-action@master
         with:
-          github_token: ${{ secrets.GITHUB_TOKEN }}]
+          github_token: ${{ secrets.GITHUB_TOKEN }}
           force_with_lease: true
