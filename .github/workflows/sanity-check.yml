@@ -1,7 +1,11 @@
 name: PR Sanity Check
 
 on:
-  - pull_request
+  # https://stackoverflow.com/questions/58184822/github-actions-on-pull-request-and-master-branch
+  pull_request:
+  push:
+    branches:
+      - main
 
 jobs:
   lint:
