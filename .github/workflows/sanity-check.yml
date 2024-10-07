@@ -23,7 +23,7 @@ jobs:
 
       - name: Check total coverage
         run: npx check-total --min 60
-      
+
       - name: Update code coverage badge
         run: DEBUG=check-code-coverage npx update-badge
 
@@ -33,5 +33,3 @@ jobs:
           DEBUG=check-code-coverage npx set-gh-status
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-
-
